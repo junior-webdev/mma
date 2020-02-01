@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" href="static/site_icon.png">
+  <link rel="icon" href="{{url_for('static', filename='site_icon.png')}}">
   <title>CLUB</title>
   <style>
     body {
-      background:url('background_mma.png');
+      background:url("{{url_for('static', filename='background_mma.png')}}");
     }
   </style>
   <script>
@@ -33,7 +33,7 @@
 </head>
 <body>
   <div style="font-size:30pt;text-align:center;">
-    <img src="site_icon.png" height="300px" width="600px" />
+    <img src="{{url_for('static', filename='site_icon.png')}}" height="300px" width="600px" />
   </div>
   <div style="font-size:30pt;text-align:center;">
     <b><strong> поговорити з</strong> <em>mma</em> </b>
