@@ -1,54 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" href="{{url_for('static', filename='site_icon.png')}}">
+  <link rel="icon" href="{{ url_for('static', filename='site_icon.png') }}">
   <title>CLUB</title>
-  <style>
-    body {
-      background:url("{{url_for('static', filename='background_mma.png')}}");
-    }
-  </style>
-  <script>
-    function addText() {
-      var newText=document.createElement("div");
-      newText.innerHTML=document.getElementById("box").value;
-      newText.onclick=removeText;
-      document.getElementById("list").appendChild(newText);
-      saveText();
-    }
-    function saveText() {
-      localStorage["storedText1"]=document.getElementById("list").innerHTML;
-    }
-    function removeText() {
-      document.getElementById("list").removeChild(this);
-      saveText();
-    }
-    function loadText() {
-      document.getElementById("list").innerHTML=localStorage["storedText1"];
-      for(var i=0; i < list.children.length; i++) {
-        list.children[i].onclick=removeText;
-      }
-    }
-  </script>
 </head>
 <body>
-  <div style="font-size:30pt;text-align:center;">
-    <img src="{{url_for('static', filename='site_icon.png')}}" height="300px" width="600px" />
-  </div>
-  <div style="font-size:30pt;text-align:center;">
-    <b><strong> поговорити з</strong> <em>mma</em> </b>
-    <br/>
-    <input style="font-size:25pt;text-align:center;" type="text" id="box" value="поговорити"/>
-    <br/>
-    <input style="font-size:25pt;text-align:center;" type="button" value="написати" onclick="addText();"/>
-  </div>
-  <div style="font-size:30pt;text-align:center;">
-    <div id="list"></div>
-    <script>
-      if(localStorage["storedText1"]) {
-        loadText();
-      }
-    </script>
-  </div>
+  <h1> Hello {{ name }} </h1>
 </body>
 </html>
