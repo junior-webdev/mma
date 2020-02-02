@@ -15,5 +15,9 @@ def hello_page():
 def user_page(user):
     return "User: {0}".format(user)
 
+@app.route('/html/<page>')
+def render_html(page):
+    return render_template('{0}.html'.format(page))
+
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
